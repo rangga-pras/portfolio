@@ -2,11 +2,8 @@ import { SectionTitle } from "./ui/SectionTitle";
 
 export function About() {
   return (
-    <section id="about" className="py-20 relative overflow-hidden">
+    <section id="about" className="py-20 bg-gray-50 dark:bg-gray-900">
       {/* Background Elements */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-900 dark:to-gray-800">
-        <div className="absolute inset-0 bg-grid-pattern opacity-[0.06]" />
-      </div>
 
       <div className="container mx-auto px-6 relative">
         <SectionTitle>About Me</SectionTitle>
@@ -22,7 +19,7 @@ export function About() {
 
           <div className="mt-6 flex justify-center">
             <span className="text-sm sm:text-base inline-block bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 px-4 py-2 rounded-lg shadow">
-              🚀 I like to build and learn things from scratch
+              🚀 I love solving problems through hands-on learning and experimentation
             </span>
           </div>
         </div>

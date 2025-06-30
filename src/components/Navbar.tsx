@@ -26,7 +26,6 @@ export function Navbar() {
     { href: '#about', label: 'About' },
     { href: '#skills', label: 'Skills' },
     { href: '#projects', label: 'Projects' },
-    { href: '#experience', label: 'Experience' },
     { href: '#blogs', label: 'Blogs' },
     { href: '#education', label: 'Education' },
     { href: '#contact', label: 'Contact' },
@@ -40,7 +39,7 @@ export function Navbar() {
       <div className="flex items-center justify-between h-12 px-4">
         {/* Logo */}
         <div className="cursor-pointer" onClick={handleLogoClick}>
-          <img src="/assets/favicon.png" alt="Logo" className="h-8 w-auto" />
+          <img src="/assets/Logo.png" alt="Logo" className="h-8 w-auto" />
         </div>
 
         {/* Desktop Navigation */}
