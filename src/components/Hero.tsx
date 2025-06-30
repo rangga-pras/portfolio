@@ -8,10 +8,10 @@ import { ActionButtons } from './hero/ActionButtons';
 
 export function Hero() {
   const roles = [
-    "Web Developer",
-    "React Enthusiast",
-    "Freelancer",
-    "Student at Informatics",
+    "Software Developer",
+    "Tech Enthusiast",
+    "Problem Solver",
+    "Informatics Students",
   ];
 
   return (
@@ -43,20 +43,23 @@ export function Hero() {
           {/* Kanan - Foto & Sosial Media */}
           <div className="flex flex-col items-center space-y-4">
             <img
-              src="/assets/profile.webp"
+              src="/assets/Profile.jpg"
               alt="Rangga Prasetya"
-              className="rounded-full w-48 h-48 object-cover shadow-xl"
+              className="rounded-full w-72 h-72 object-cover shadow-xl"
             />
             <SocialLinks />
           </div>
         </div>
 
-        {/* Scroll Down */}
-        <div className="mt-10 flex justify-center">
-          <Link href="#about" className="flex items-center gap-1 text-sm text-blue-600 dark:text-blue-400 hover:underline">
-            Scroll Down <ArrowDown size={16} />
+        <div className="absolute bottom-[-2rem] left-1/2 -translate-x-1/2 animate-bounce">
+          <Link href="#about" className="group relative w-12 h-12 flex items-center justify-center rounded-full border border-blue-500 transition-all overflow-hidden">
+            {/* Background hover animation */}
+            <span className="absolute inset-0 bg-white opacity-0 group-hover:opacity-100 transition-all duration-300 scale-0 group-hover:scale-100 rounded-full z-0"></span>
+            {/* Arrow icon */}
+            <ArrowDown className="w-5 h-5 text-blue-500 z-10 transition-all group-hover:text-black" />
           </Link>
         </div>
+
       </div>
     </section>
   );
