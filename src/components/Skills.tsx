@@ -42,7 +42,7 @@ const cmsSkills = [
 
 export function Skills() {
   return (
-    <section id="skills" className="py-20">
+    <section id="skills" className="py-20 bg-gray-50 dark:bg-gray-800">
       <div className="container mx-auto px-6">
         <SectionTitle>Skills</SectionTitle>
 
