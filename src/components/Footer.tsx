@@ -60,6 +60,16 @@ export function Footer() {
               <SiVite className="w-6 h-6 text-yellow-500 animate-pulse" />
             </p>
           </div>
+
+          <div className="flex justify-center">
+            <a href="https://hits.sh/ranggaprasetya.vercel.app/" target="_blank" rel="noopener noreferrer">
+              <img
+                src="https://hits.sh/ranggaprasetya.vercel.app.svg?style=for-the-badge&label=Views&color=2a6acf&labelColor=1f2937"
+                alt="Views"
+                className="rounded-lg"/>
+            </a>
+          </div>
+
         </div>
       </div>
     </footer>
