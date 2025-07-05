@@ -8,7 +8,7 @@ Welcome to my personal portfolio website! This site showcases my skills, project
 
 You can explore the live version of the website at:
 
-**🔗 [Visit Portfolio](https://your-deployment-url.vercel.app)**
+**🔗 [Visit Portfolio](https://ranggaprasetya.vercel.app/)**
 
 ---
 
