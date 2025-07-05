@@ -51,7 +51,7 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="absolute bottom-[-2rem] left-1/2 -translate-x-1/2 animate-bounce">
+        <div className="absolute bottom-[-2rem] left-1/2 -translate-x-1/2 animate-bounce hidden sm:flex">
           <Link href="#about" className="group relative w-12 h-12 flex items-center justify-center rounded-full border border-blue-500 transition-all overflow-hidden">
             {/* Background hover animation */}
             <span className="absolute inset-0 bg-white opacity-0 group-hover:opacity-100 transition-all duration-300 scale-0 group-hover:scale-100 rounded-full z-0"></span>
