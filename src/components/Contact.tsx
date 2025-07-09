@@ -23,7 +23,7 @@ export function Contact() {
                 className="flex items-center gap-3 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
               >
                 <Mail className="w-6 h-6" />
-                <span>rangga.prasetya@example.com</span>
+                <span>muhrangga.prasetya@gmail.com</span>
               </a>
               <a
                 href="https://github.com/rangga-pras"
