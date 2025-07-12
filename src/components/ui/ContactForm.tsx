@@ -12,6 +12,12 @@ export function ContactForm() {
 
   const [status, setStatus] = useState<'idle' | 'success'>('idle');
 
+  const [errors, setErrors] = useState({
+    name: '',
+    email: '',
+    message: '',
+  });
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
       ...formData,
@@ -21,9 +27,36 @@ export function ContactForm() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+
+    const newErrors = { name: '', email: '', message: '' };
+    let isValid = true;
+
+    if (!formData.name.trim()) {
+      newErrors.name = 'Name is required.';
+      isValid = false;
+    }
+
+    if (!formData.email.trim()) {
+      newErrors.email = 'Email is required.';
+      isValid = false;
+    } else if (!/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/.test(formData.email)) {
+      newErrors.email = 'Invalid email format.';
+      isValid = false;
+    }
+
+    if (!formData.message.trim()) {
+      newErrors.message = 'Message is required.';
+      isValid = false;
+    }
+
+    setErrors(newErrors);
+
+    if (!isValid) return;
+
     setStatus('success');
     setFormData({ name: '', email: '', message: '' });
   };
+
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
@@ -38,14 +71,17 @@ export function ContactForm() {
           </div>
           <input
             type="text"
-            id="name"
+            id="name" 
             name="name"
             value={formData.name}
             onChange={handleChange}
             required
             placeholder="Enter your name"
-            className="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 bg-gray-100 dark:bg-gray-800 placeholder-gray-500 dark:placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+            className="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 bg-gray-100 dark:bg-gray-800 placeholder-gray-500 dark:placeholder-gray-400 dark:text-white focus:ring-2 focus:ring-blue-500 focus:outline-none"
           />
+          {errors.name && (
+             <p className="text-red-500 text-sm mt-1">{errors.name}</p>
+           )}
         </div>
       </div>
 
@@ -66,8 +102,11 @@ export function ContactForm() {
             onChange={handleChange}
             required
             placeholder="Enter your email"
-            className="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 bg-gray-100 dark:bg-gray-800 placeholder-gray-500 dark:placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+            className="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 bg-gray-100 dark:bg-gray-800 placeholder-gray-500 dark:placeholder-gray-400 dark:text-white focus:ring-2 focus:ring-blue-500 focus:outline-none"
           />
+          {errors.email && (
+            <p className="text-red-500 text-sm mt-1">{errors.email}</p>
+          )}
         </div>
       </div>
 
@@ -82,13 +121,14 @@ export function ContactForm() {
           </div>
           <textarea
             id="message"
+            
             name="message"
             value={formData.message}
             onChange={handleChange}
             required
             placeholder="Enter your message"
             rows={4}
-            className="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 bg-gray-100 dark:bg-gray-800 placeholder-gray-500 dark:placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:outline-none resize-none"
+            className="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 bg-gray-100 dark:bg-gray-800 placeholder-gray-500 dark:placeholder-gray-400 dark:text-white focus:ring-2 focus:ring-blue-500 focus:outline-none resize-none"
           />
         </div>
       </div>
@@ -104,7 +144,7 @@ export function ContactForm() {
 
       {/* Status Message */}
       {status === 'success' && (
-        <p className="text-green-600 text-center mt-4">Message sent successfully! (Dummy)</p>
+        <p className="text-green-600 text-center mt-4">Message sent successfully!</p>
       )}
     </form>
   );
