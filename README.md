@@ -2,6 +2,10 @@
 
 Welcome to my personal portfolio website! This site showcases my skills, projects, and background as a passionate web developer and student in computer science. Built with cutting-edge technologies like **React**, **TypeScript**, **Vite**, and **Tailwind CSS**, the portfolio is fast, responsive, and designed to reflect both aesthetics and functionality.
 
+Muhammad Rangga Prasetya
+24120310003
+WCD07
+
 ---
 
 ## 🌐 Live Preview
