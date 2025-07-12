@@ -29,6 +29,7 @@ export function BlogCard({ title, description, thumbnail, link }: BlogCardProps)
           <img
             src={thumbnail}
             alt={title}
+            loading="lazy"
             className="w-full h-48 object-cover rounded-lg transform group-hover:scale-105 transition-transform duration-300 ease-in-out"
           />
         ) : (
